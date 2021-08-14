@@ -9,6 +9,8 @@ Douro VR is one of the main exhibitions of the Science Center Museum in Braganç
 - Adobe Premiere, After Effects, FFmpeg;
 - Unity3D, Blender, 3D Animations.
 
+![rel_cam](https://user-images.githubusercontent.com/21102697/129442381-9996d390-6714-4a3a-993a-ccadbaa5e8d2.png)
+
 ![virtual_buttons](https://user-images.githubusercontent.com/21102697/129439975-a27ed625-4fcd-40b6-bfd3-0b45e2b36878.png)
 
 ![Screenshot_3](https://user-images.githubusercontent.com/21102697/113753401-f7071800-9705-11eb-8afd-6c63a299afd6.png)
