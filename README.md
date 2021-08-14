@@ -14,4 +14,4 @@ Douro VR is one of the main exhibitions of the Science Center Museum in Braganç
 ![Screenshot_4](https://user-images.githubusercontent.com/21102697/113753403-f79fae80-9705-11eb-8e30-896a5fe6e5c6.png)
 
 
-Video Preview: https://drive.google.com/file/d/1PUSr9sIk9nPAHgMszGaBD63OzfQbMufT/view?usp=sharing 
+%Video Preview: https://drive.google.com/file/d/1PUSr9sIk9nPAHgMszGaBD63OzfQbMufT/view?usp=sharing 
