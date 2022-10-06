@@ -12,12 +12,10 @@ public class CanvasController : MonoBehaviour
         float speed;
         speed = Time.deltaTime * SPEED;
 
-        //Position  -0.1 antes
         Vector3 posTo = Camera.transform.position + (Camera.transform.forward * DISTANCE);
         posTo.y = 0.1f;
         transform.position = Vector3.SlerpUnclamped(transform.position, posTo, speed);    
         
-        //Rotation
         Quaternion rotTo = Quaternion.LookRotation(transform.position - Camera.transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotTo, speed);
     }
