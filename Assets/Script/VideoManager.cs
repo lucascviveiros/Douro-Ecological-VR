@@ -74,14 +74,11 @@ public class VideoManager : MonoBehaviour
 
     private void Awake()
     {
-        //Debug.Log("Scene 1 !!!!!!!!!! \n");
         videoPlayer = GetComponent<VideoPlayer>(); //my video player
         audioSource = GetComponent<AudioSource>();
         videoPlayer.targetTexture = mRenderTexture5K;
         mySphereRenderer.material = mVideoMaterial5K;
 
-        //Whenever we complete seeking player we gonna call the complete function 
-        //seekComplete is a event
         videoPlayer.seekCompleted += OnComplete;
         videoPlayer.prepareCompleted += OnComplete;
         videoPlayer.loopPointReached += OnLoop;
@@ -209,24 +206,6 @@ public class VideoManager : MonoBehaviour
         whiteCanvas.enabled = false;
     }
     
-    /*
-    public void PlayFakeVideoDebug()
-    {
-        Debug.Log("Fake Video!!!");
-        index = 5;
-        StartPrepare(2);
-        StopAllCoroutines();
-        triggerManager.StopAllCoroutines();
-
-        videoPlayer.targetTexture = mRenderTexture5K;
-        mySphereRenderer.material = mVideoMaterial5K;
-        myMenuHotspot.SetActive(true);
-        myCubeDirection.SetActive(false);
-        Animals[0].SetActive(false);
-        Animals[1].SetActive(false);
-        whiteCanvas.enabled = false;
-    }*/
-    
     public int GetCurrentVideo()
     {
         return index;
@@ -239,12 +218,7 @@ public class VideoManager : MonoBehaviour
 
     private void StartPrepare(int clipIndex)
     {
-        //IsVideoReady = false;
-        //videoPlayer.clip = videos[clipIndex];
-        //videoPlayer.Prepare();
-
         isVideoReady = false;
-        // videoPlayer.url = videoList[clipIndex];
 
         videoPlayer.url = StreamingVideo(clipIndex);
 
@@ -289,38 +263,13 @@ public class VideoManager : MonoBehaviour
             subtitleCanvas.enabled = true;
             subtitleManager.FrenchSubtitle();
         }
-
-        /*
-        else if (index == 5) //FAKE VIDEO DEBUG
-        {
-            audioSource.clip = videoAudios[1];
-            audioSource.Stop();
-            //audioSource.Play();
-            //subtitleCanvas.enabled = true;
-            //subtitleManager.FrenchSubtitle();
-
-        }*/
     }
 
     private void OnLoop(VideoPlayer videoPlayer)  //* Looping only for the Menu video
-    {/*
-        if (index != 0) 
-        {
-            //antes era loop somente pro menu agora é chamar a cena novamente
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-        else if (index == 0)
-        {
-            //StartCoroutine(ReturnDayLight());
-            audioSource.clip = videoAudios[0];
-            audioSource.Play();
-        }*/
-
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
     }
 
-    //VideoEvent is a new class that inherits from the UnityEvent. So we can giver our own custom event
     public class VideoEvent : UnityEvent<bool>
     {
 
@@ -334,45 +283,12 @@ public class VideoManager : MonoBehaviour
         path = Path.Combine(rootPath, fileName);
 
         return path;
-        //videoPlayer.url = path;
-        //videoPlayer.Play();
     }
 
     private void VideoPlayer_errorReceived(VideoPlayer source, string message)
     {
-        /// So that I can see the debug message in the headset in my case
-       // _debugText.text += message;
-        /// To avoid memory leaks, unsubscribe from the event
-        /// otherwise it could continuously send this message
         videoPlayer.errorReceived -= VideoPlayer_errorReceived;
     }
-
-
-
-    /*
-     * public void SeekForward()
-        {
-            StartSeek(10.0f);
-        }
-
-        public void SeekBack()
-        {
-            StartSeek(-10.0f);
-        }
-
-        private void StartSeek(float seekAmount)
-        {
-            isVideoReady = false;
-            videoPlayer.time += seekAmount;
-        }
-        public void PreviousVideo()
-        {
-            index--;
-            //if (index == -1)
-                //index = videos.Count - 1;
-            StartPrepare(index);
-        }
-    */
 
     private void FixedUpdate()
     {
@@ -398,9 +314,7 @@ public class VideoManager : MonoBehaviour
     public void DayLightTransition()
     {
         phi = timer / 90 * 2 * Mathf.PI;
-        // get cosine and transform from -1..1 to 0..1 range
         amplitude = (Mathf.Cos((float)phi) * 0.5) + 0.5;
-        // set light color
         myDayLight.intensity = (float)amplitude;
     }
 
@@ -409,10 +323,9 @@ public class VideoManager : MonoBehaviour
         myDayLight.intensity = Mathf.Lerp(myDayLight.intensity, 1.0f, Time.deltaTime * 0.1f);
     }
 
-    //Return day light intensity to 1, returnTime calls the decreasing light update
     public IEnumerator ReturnDayLight()
     {
-        returnTime = true; //for having enough time to update to 1 intensity
+        returnTime = true; 
         timer = 0;
         myDayLight.intensity = 1;
         yield return new WaitForSecondsRealtime(1);
@@ -420,7 +333,6 @@ public class VideoManager : MonoBehaviour
         risingDay = false;
     }
 
-    //Rising day light intensity after 62 seconds
     public IEnumerator RisingDayAgain()
     {
         yield return new WaitForSecondsRealtime(68);
