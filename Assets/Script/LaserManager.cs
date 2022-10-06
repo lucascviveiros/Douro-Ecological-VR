@@ -14,10 +14,6 @@ public class LaserManager : MonoBehaviour
     void Update()
     {
         laser.SetPosition(0, transform.position);
-
-        //Vector3 newBeginPos = transform.localToWorldMatrix * new Vector4(beginPos.x, beginPos.y, beginPos.z, 1);
-        //Vector3 newEndPos = transform.localToWorldMatrix * new Vector4(endPos.x, endPos.y, endPos.z, 1);
-
          RaycastHit hit;
           if (Physics.Raycast(transform.position, transform.forward, out hit))
           {
