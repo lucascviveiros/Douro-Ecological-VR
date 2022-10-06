@@ -7,8 +7,6 @@ public class StreamingVideo : MonoBehaviour
 {
     public UnityEngine.Video.VideoPlayer videoPlayer;
     private string status;
-    //public GameObject VRCam;
-   // public Text _debugText;
     private string rootPath;
     private string path;
     private string fileName = "VideoPrincipal_2880x5760__h265_injected";
@@ -29,11 +27,7 @@ public class StreamingVideo : MonoBehaviour
    
     private void VideoPlayer_errorReceived(VideoPlayer source, string message)
     {
-        /// So that I can see the debug message in the headset in my case
        // _debugText.text += message;
-
-        /// To avoid memory leaks, unsubscribe from the event
-        /// otherwise it could continuously send this message
         videoPlayer.errorReceived -= VideoPlayer_errorReceived;
     }
 }
