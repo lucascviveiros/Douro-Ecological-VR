@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class FillCursor : MonoBehaviour 
 {
-    //para timer ao contrario comeca do zero
     [SerializeField]
     public float time = 0.0f;
     private Image radial;
@@ -20,7 +19,6 @@ public class FillCursor : MonoBehaviour
         radial.fillAmount = 0;
 
         sound = GetComponent<AudioSource>();
-        //para timer ao contrario
         //radial.fillAmount = 1;	
     }
 
@@ -29,18 +27,10 @@ public class FillCursor : MonoBehaviour
         if (go)
         {
             time = time + Time.deltaTime;
-//            radial.fillAmount = 0 + time / 4;
             radial.fillAmount = 0 + time / 5;
-
-
-            //para timer ao contrario
-            //radial.fillAmount = 1 - time / 4;
         }
         else {
             radial.fillAmount = 0;
-
-            //para timer ao contrario
-            //radial.fillAmount = 1;
         }
     }
 
