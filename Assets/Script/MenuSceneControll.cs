@@ -18,13 +18,10 @@ public class MenuSceneControll : MonoBehaviour
 
     #region privateRegion
     private int vLanguage;
-    //private UnityEvent onButtonPressed;
     private bool pressedInProgress = false;
     private bool lookButton;  
     private AudioSource buttonClick;
     private int[] cliques = new int[4];
-    //[SerializeField]
-    //private Collider[] boxCollider = new Collider[5];
     #endregion
 
     private void Start()
