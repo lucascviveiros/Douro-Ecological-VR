@@ -11,10 +11,6 @@ public class TriggerManager : MonoBehaviour
     public GameObject scifiManager;
     public Canvas whiteCanvas;
     public Collider[] boxCollider = new Collider[5];
-    //public ParticleSystem conffetiParticle;
-    //public ParticleSystem fireworks;
-    //public AudioSource audioSource = null;
-    //public AudioClip fogoSound;
     #endregion
 
     #region privateRegion
@@ -29,14 +25,6 @@ public class TriggerManager : MonoBehaviour
     {
         lookButton = false;
         buttonClick = GetComponent<AudioSource>();
-        //audioSource = GetComponent<AudioSource>();
-        //audioSource.loop = true;
-
-        //var emission = conffetiParticle.emission;
-        //emission.enabled = false;
-        //var fogos = fireworks.emission;
-        //fogos.enabled = false;
-
         whiteCanvas.enabled = false;
         Renderer[] rs = scifiManager.GetComponentsInChildren<Renderer>();
         foreach (Renderer r in rs)
@@ -45,7 +33,6 @@ public class TriggerManager : MonoBehaviour
         }
 
         DisableColliders();
-
     }
 
     private void DisableColliders()
@@ -62,19 +49,16 @@ public class TriggerManager : MonoBehaviour
         {
             if (index == "ActivatorVideoPT")
             {
-                //cliques[0]++;
                 StartCoroutine(WaitButtonForVideo360(0));
 
             }
             else if (index == "ActivatorVideoES")
             {
-                //cliques[1]++;
                 StartCoroutine(WaitButtonForVideo360(1));
 
             }
             else if (index == "ActivatorVideoEN")
             {
-                //cliques[2]++;
                 StartCoroutine(WaitButtonForVideo360(2));
 
             }
@@ -89,49 +73,6 @@ public class TriggerManager : MonoBehaviour
             }
         }
     }
-    /*
-    private IEnumerator WaitButtonForVideo360(int indexButton) ///Fake VIDEO Debug
-    {
-        buttonClick.Play(0);
-        videoManagerStreaming.PauseToggle();
-
-        foreach (Collider c in boxCollider)
-            c.enabled = false;
-
-        yield return new WaitForSeconds(1);
-
-        if (videoManagerStreaming.GetCurrentVideo() == 0) //to avoid 2 button clicks on menu's loop 
-        {
-            if (indexButton == 0)
-            {
-                //ultimoButton.text = "Portugal";
-
-                //cliquesPT.text = cliques[0].ToString();
-            }
-            else if (indexButton == 1)
-            {
-                //ultimoButton.text = "Spain";
-
-                //cliquesSP.text = cliques[1].ToString();
-            }
-            else if (indexButton == 2)
-            {
-                //ultimoButton.text = "England";
-
-                //cliquesEN.text = cliques[2].ToString();
-            }
-            else if (indexButton == 3)
-            {
-                //ultimoButton.text = "França";
-
-                //cliquesFR.text = cliques[3].ToString();
-            }
-
-            videoManagerStreaming.PlayFakeVideoDebug();
-
-        }
-    }*/
-
 
     private IEnumerator WaitButtonForVideo360(int indexButton)
     {
@@ -176,19 +117,7 @@ public class TriggerManager : MonoBehaviour
     IEnumerator ShowInitTable()
     {
         yield return new WaitForSecondsRealtime(30);
-        //yield return new WaitForSecondsRealtime(3); //FOR DEBUGGG
-
-        //var emission = conffetiParticle.emission;
-        //emission.enabled = true
-        //var fogos = fireworks.emission;
-        //fogos.enabled = true;
-
-        //        yield return new WaitForSecondsRealtime(2);
-        //audioSource.clip = fogoSound; //xana sound
-        //audioSource.Play();
-
         whiteCanvas.enabled = true;
-        //Mostrando ScifiManager
         Renderer[] rs = scifiManager.GetComponentsInChildren<Renderer>();
         foreach (Renderer r in rs)
         {
