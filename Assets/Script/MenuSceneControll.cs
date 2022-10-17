@@ -44,7 +44,7 @@ public class MenuSceneControll : MonoBehaviour
         }
     }
 
-public IEnumerator ShowInitTable()
+    public IEnumerator ShowInitTable()
     {
         yield return new WaitForSecondsRealtime(30);
 
