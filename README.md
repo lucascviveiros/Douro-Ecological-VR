@@ -2,11 +2,11 @@
 
 Douro VR is one of the main exhibitions of the Science Center Museum in Bragança-Portugal. We create a unique Virtual Reality application that uses hand interaction, eye-direction (i.e, head-mounted-direction) to "navigate" in VR while watching the 360 videos, 3D animals animation, and 360 contents
 
-- Oculus Quest, Oculus link, Oculus Integration SDK; 
+- Oculus Quest / Integration SDK; 
 - Hands Recognition, Haptics Interaction;
 - 360 Video Recording;
-- Insta360 Pro 8K Camera;
-- Adobe Premiere, After Effects, FFmpeg;
+- Videos from Insta360 Pro 8K Camera;
+- Videos editing in Adobe Premiere, After Effects, FFmpeg;
 - Unity3D, Blender, 3D Animations.
 
 ![rel_cam](https://user-images.githubusercontent.com/21102697/129442381-9996d390-6714-4a3a-993a-ccadbaa5e8d2.png)
