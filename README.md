@@ -1,6 +1,6 @@
-# Douro-Ecological-VR
+# Douro-Ecological-VR (Douro Virtual)
 
-Douro VR is one of the main exhibitions of the Science Center Museum in Bragança-Portugal. We create a unique Virtual Reality application that uses hand interaction, eye-direction (i.e, head-mounted-direction) to "navigate" in VR while watching the 360 videos, 3D animals animation, and 360 contents
+Douro Virtual is one of the main exhibitions of the Science Center Museum in Bragança-Portugal. We create a unique Virtual Reality application that uses hand interaction, eye-direction (i.e, head-mounted-direction) to "navigate" in VR while watching the 360 videos, 3D animals animation, and 360 contents
 
 - Oculus Quest / Integration SDK; 
 - Hands Recognition, Haptics Interaction;
@@ -22,3 +22,4 @@ Video link: https://www.youtube.com/watch?v=FNU5VoUWviA
 
 Article: https://link.springer.com/chapter/10.1007/978-3-030-68086-2_22
 
+Design: https://divaga.pt/centro-ciencia-viva-de-braganca
